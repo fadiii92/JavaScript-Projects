@@ -95,7 +95,9 @@ main {
 
 .hint{
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
+    color: #8266C7;
+    font-weight: bold;
 
 }
 input[type=number]::-webkit-inner-spin-button,
