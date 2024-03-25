@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toggle.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="calulater_App">
+
+            <div class="UpperSide">
+                <div class="heading">
+                    <h2>calc</h2>
+                    <div class="toggleMenu">
+                        <label for="toggleButton">Theme: </label>
+                        <label class="switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="text" id="inputTag" readonly>
+                </div>
+            </div>
+
+            <div class="mainSide">
+                <div class="row row1">
+                    <button class="appenButton" id="7">7</button>
+                    <button class="appenButton" id="8">8</button>
+                    <button class="appenButton" id="9">9</button>
+                    <button id="Del">DEL</button>
+                </div>
+                <div class="row row2">
+                    <button class="appenButton" id="4">4</button>
+                    <button class="appenButton" id="5">5</button>
+                    <button class="appenButton" id="6">6</button>
+                    <button id="plus" class="operatorButtons">+</button>
+                </div>
+                <div class="row row3">
+                    <button class="appenButton" id="1">1</button>
+                    <button class="appenButton" id="2">2</button>
+                    <button class="appenButton" id="3">3</button>
+                    <button id="subtract" class="operatorButtons">-</button>
+                </div>
+                <div class="row row4">
+                    <button class="appenButton" id=".">.</button>
+                    <button class="appenButton" id="0">0</button>
+                    <button id="divide" class="operatorButtons">/</button>
+                    <button id="multiply" class="operatorButtons">x</button>
+                </div>
+                <div class="row row5">
+                    <button id="reset">RESET</button>
+                    <button id="equal">=</button>
+                </div>
+
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

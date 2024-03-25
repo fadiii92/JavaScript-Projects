@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess the Number</title>
+
+</head>
+<body>
+
+    <div class="GameContainer mako-regular" >
+            <div id="gameHeader" >
+                <p >Number Guessing Game</p>
+            </div>
+            <p>Guess a Number between 1 to 15</p>
+            <div class="inputSubmission">
+                <input type="number"><br>
+                <button>Guess</button>
+    
+            </div>
+            <div class="resultShow">
+                <p>Guessed Number is: <span id="guessNumber"></span></p>
+                <p>No. of Guesses: <span id="numberOfGuesses"></span></p>
+            </div>
+            <div class="hint">
+                <p>Your Guess is too <span id="hintSpan">high</span></p>
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
