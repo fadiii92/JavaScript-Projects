@@ -24,6 +24,8 @@ addButton.addEventListener('click', () => {
             if (nextSibling.tagName === 'HR')
                 nextSibling.remove();
             task.remove();
+
+            updateSessionstorage();
         });
 
         checkbox.addEventListener('change', () => {
@@ -33,6 +35,7 @@ addButton.addEventListener('click', () => {
                 itemElement.style.textDecoration = 'none';
 
         }); 
+        updateSessionstorage()
 });
 
 delButton.addEventListener('click',()=>{
@@ -46,5 +49,37 @@ delButton.addEventListener('click',()=>{
                 parent.remove()
             }
     })
+    updateSessionstorage()
 
 })
+function updateSessionstorage(){
+    localStorage.setItem("Tasks",tasksDiv.innerHTML)
+}
+window.onload = ()=>{
+    tasksDiv.innerHTML = localStorage.getItem("Tasks");
+
+    document.querySelectorAll('.task').forEach(task=>{
+        task.querySelector('.cross').addEventListener('click',()=>{
+            let nextSibling = task.nextElementSibling;
+            if (nextSibling.tagName === 'HR')
+                nextSibling.remove();
+            task.remove();
+            
+            updateSessionstorage()
+        })
+
+        let checkbox = task.querySelector('.todoCheck');
+        let itemElement = task.querySelector('.toDoItemText');
+
+
+        checkbox.addEventListener('change',()=>{
+            if (checkbox.checked)
+            itemElement.style.textDecoration = 'line-through';
+        else
+            itemElement.style.textDecoration = 'none';
+
+        })
+        updateSessionstorage()
+    })
+}
+
