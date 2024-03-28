@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: #4453B0;
+    width: 100vw;
+    height: 80px;
+}
+main{
+    position: relative;
+}
+.ToDoContainer{
+    position: absolute;
+    top: -80px;
+    right: 50%;
+    transform: translate(50%, 40px);
+    width: 500px;
+    min-height: 500px;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+
+    
+
+}
+.TodoHeading{
+    width: 100%;
+    height: 80px;
+    background-color: #4453B0;
+    line-height: 80px;
+    text-align: center;
+    color: white;
+    box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.5), /* Shadow on left side */
+    5px 0 5px -5px rgba(0, 0, 0, 0.5); /* Shadow on right side */
+    
+}
+.todoBody{
+    padding: 50px;
+}
+.addToDo
+{
+    width: 100%;
+}
+.addToDo p{
+    color: #4453B0;
+    font-size: 12px;
+}
+.addToDo input{
+    width: 65%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #4453B0;
+    padding: 2px;
+    background-color: #E9EEFC;
+}
+.addToDo button{
+    padding: 8px 15px;
+    margin-left: 25px;
+    background-color: #4453B0;
+    border: none;
+    font-weight: bold;
+}
+.addToDo button:hover{
+    color: black;
+    background-color: #4452b05b;
+}
+input:focus{
+    outline: none;
+}
+.tasks{
+    margin-top: 20px;
+    padding: 5px;   
+}
+.task{
+    display: flex;
+    margin: 8px 0px;
+}
+hr{
+    margin: 7px 0px;
+}
+.toDoItemText{
+    margin-left: 20px;
+}
+.cross{
+    margin-left: 250px;
+    cursor: pointer;
+}
+.DeleteSelected{
+    padding: 10px 15px;
+    background-color: #DD5781;
+    color: white;
+    border: none;
+    position: absolute;
+    bottom: 5px;
+    left: 50px;
+    margin-top: 45px;
+}
+.DeleteSelected:hover
+{
+    background-color: #c72156;
+
+}

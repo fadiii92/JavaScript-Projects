@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cross.css">
+
 </head>
+
 <body>
-        <h2>to list</h2>
+    <header>
+
+    </header>
+    <main>
+        <div class="ToDoContainer">
+            <div class="TodoHeading">
+                <h2>ToDo List</h2>
+            </div>
+
+            <div class="todoBody">
+                <div class="addToDo">
+                    <p>Add a new Task</p>
+                    <input type="text" name="todo" id="todo">
+                    <button id="addTodoButton">Add ToDo</button>
+                </div>
+
+                <div class="tasks">
+                    <!-- <div class="task">
+                        <input type="checkbox" class="todoCheck"> <span class="toDoItemText">Sample Item</span> <span class="cross">&#10060;</span>
+                    </div> -->
+                    <!-- <hr> -->
+
+                </div>
+                
+                <button class="DeleteSelected">Delete Selected</button>
+
+
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </main>
+    <footer>
+
+    </footer>
+
 </body>
+
 </html>
