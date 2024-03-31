@@ -13,58 +13,57 @@ addButton.addEventListener('click', () => {
     tasksDiv.appendChild(task);
     tasksDiv.appendChild(hr);
 
-    
-        let cross = task.querySelector('.cross');
-        let checkbox = task.querySelector('.todoCheck');
-        let itemElement = task.querySelector('.toDoItemText');
+
+    let cross = task.querySelector('.cross');
+    let checkbox = task.querySelector('.todoCheck');
+    let itemElement = task.querySelector('.toDoItemText');
 
 
-        cross.addEventListener('click', () => {
-            let nextSibling = task.nextElementSibling;
-            if (nextSibling.tagName === 'HR')
-                nextSibling.remove();
-            task.remove();
+    cross.addEventListener('click', () => {
+        let nextSibling = task.nextElementSibling;
+        if (nextSibling.tagName === 'HR')
+            nextSibling.remove();
+        task.remove();
 
-            updateSessionstorage();
-        });
+        updateSessionstorage();
+    });
 
-        checkbox.addEventListener('change', () => {
-            if (checkbox.checked)
-                itemElement.style.textDecoration = 'line-through';
-            else
-                itemElement.style.textDecoration = 'none';
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked)
+            itemElement.style.textDecoration = 'line-through';
+        else
+            itemElement.style.textDecoration = 'none';
 
-        }); 
-        updateSessionstorage()
+    });
+    updateSessionstorage()
 });
 
-delButton.addEventListener('click',()=>{
+delButton.addEventListener('click', () => {
     let checkboxes = document.querySelectorAll('.todoCheck');
-    checkboxes.forEach(element=>{
-        if(element.checked)
-            {
-                let parent = element.parentElement
-                
-                parent.nextElementSibling.remove();
-                parent.remove()
-            }
+    checkboxes.forEach(element => {
+        if (element.checked) {
+            let parent = element.parentElement
+
+            parent.nextElementSibling.remove();
+            parent.remove()
+        }
     })
     updateSessionstorage()
 
 })
-function updateSessionstorage(){
-    localStorage.setItem("Tasks",tasksDiv.innerHTML)
+function updateSessionstorage() {
+    localStorage.setItem("Tasks", tasksDiv.innerHTML)
 }
-window.onload = ()=>{
+window.onload = () => {
     tasksDiv.innerHTML = localStorage.getItem("Tasks");
 
-    document.querySelectorAll('.task').forEach(task=>{
-        task.querySelector('.cross').addEventListener('click',()=>{
+    document.querySelectorAll('.task').forEach(task => {
+        task.querySelector('.cross').addEventListener('click', () => {
             let nextSibling = task.nextElementSibling;
             if (nextSibling.tagName === 'HR')
                 nextSibling.remove();
             task.remove();
-            
+
             updateSessionstorage()
         })
 
@@ -72,14 +71,30 @@ window.onload = ()=>{
         let itemElement = task.querySelector('.toDoItemText');
 
 
-        checkbox.addEventListener('change',()=>{
+        checkbox.addEventListener('change', () => {
             if (checkbox.checked)
-            itemElement.style.textDecoration = 'line-through';
-        else
-            itemElement.style.textDecoration = 'none';
-
+                itemElement.style.textDecoration = 'line-through';
+            else
+                itemElement.style.textDecoration = 'none';
         })
+
+        let chekboxesMarks = JSON.parse(localStorage.getItem('CheckBoxes'));
+        let checkboxes = document.querySelectorAll('.todoCheck');
+        checkboxes.forEach((item, ind) => {
+            item.checked = chekboxesMarks[ind];
+
+        });
+
+
+
         updateSessionstorage()
     })
 }
+
+window.addEventListener('beforeunload', () => {
+    let checkboxes = document.querySelectorAll('.todoCheck');
+    let checkChecked = [];
+    checkboxes.forEach(element => checkChecked.push(element.checked));
+    localStorage.setItem('CheckBoxes', JSON.stringify(checkChecked));
+});
 

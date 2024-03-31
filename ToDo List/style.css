@@ -81,9 +81,10 @@ hr{
 }
 .toDoItemText{
     margin-left: 20px;
+    width: 60%;
 }
 .cross{
-    margin-left: 250px;
+    margin-left: 50px;
     cursor: pointer;
 }
 .DeleteSelected{
@@ -101,3 +102,4 @@ hr{
     background-color: #c72156;
 
 }
+
