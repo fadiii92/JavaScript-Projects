@@ -76,7 +76,7 @@ window.onload = () => {
                 itemElement.style.textDecoration = 'line-through';
             else
                 itemElement.style.textDecoration = 'none';
-        })
+        });
 
         let chekboxesMarks = JSON.parse(localStorage.getItem('CheckBoxes'));
         let checkboxes = document.querySelectorAll('.todoCheck');
@@ -84,10 +84,7 @@ window.onload = () => {
             item.checked = chekboxesMarks[ind];
 
         });
-
-
-
-        updateSessionstorage()
+        updateSessionstorage();
     })
 }
 
