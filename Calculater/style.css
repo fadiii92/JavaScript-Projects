@@ -83,6 +83,7 @@ main {
 #Del {
     color: white;
     background-color: rgb(101, 113, 153);
+    box-shadow: 0 4px 0px #313e5b;
 }
 
 #Del:hover {
@@ -93,6 +94,7 @@ main {
 #reset {
     color: white;
     background-color: rgb(101, 113, 153);
+    box-shadow: 0 4px 0px #313e5b;
 }
 
 #reset:hover {
@@ -103,6 +105,7 @@ main {
 #equal {
     background-color: rgb(208, 64, 47);
     color: white;
+    box-shadow: 0 4px 0 #852925;
 }
 
 #equal:hover {
@@ -126,7 +129,8 @@ main {
     padding: 10px 10px;
     border-radius: 5px;
     border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    box-shadow: 0px 4px 0px #b5a399;
     background-color: rgb(235, 226, 219);
     font-family: "Roboto Serif", serif;
     font-optical-sizing: auto;
@@ -136,6 +140,8 @@ main {
     font-variation-settings:
         "wdth" 100,
         "GRAD" 0;
+
+        
 }
 
 .row button:hover {

@@ -1,27 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>  
+
+<body>
     <header>
-        
+
     </header>
     <main>
-       <div class="leftside">
-        
-       </div>
-       <div class="rightside">
+        <div class="leftside">
+            <div class="navitem">
+                <img src="utilities/TaskWhite.svg" alt="icon" class="marginLeft">
+                <p>Task</p>
+            </div>
+            <div class="navitem">
+                <img src="utilities/locationWhtie.svg" alt="icon" class="marginLeft">
+                <p>Location</p>
+            </div>
+            <div class="navitem logout">
+                <img src="utilities/logout.svg" alt="icon" class="marginLeft">
+                <p>Logout</p>
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="addnewtask">
+                <p>+ Add new task</p>
+            </div>
 
-       </div>
+            <div class="incompleteTasks">
+                <h3>Incomplete</h3>
+                <div class="task">
+                    <input type="checkbox" class="chekbox">
+                    <div class="textspans">
+                        <span class="title">Submit my resume</span>
+                        <span class="time">⏰ Today, 17.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="completedTask">
+                <h3>Completed Tasks</h3>
+                <div class="checkedTask">
+                    <input type="checkbox" checked><span id="chekcedtitle">Sample</span>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="popup">
+            <h2>New Task</h2>
+            <div class="discriptionMenu">
+                <div class="popupitem">
+                    <p><img src="utilities/summaryicon.png" alt="summary"> Summary</p>
+                    <input type="text" name="summary" id="summary">
+                </div>
+                <div class="popupitem">
+                    <p><img src="utilities/descriptionicon.png" alt="description"> Description</p>
+                    <input type="text" name="description" id="description">
+                </div>
+                <div class="popupitem">
+                    <p><img src="utilities/dudateicon.png" alt="duedate"> Due Date</p>
+                    <input type="text" name="duedate" id="duedate">
+                </div>
+                <div class="buttons">
+                    <button id="save">Save</button>
+                    <button id="cance">Cancel</button>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <script src="script.js"></script>
     </main>
-  
+
     <footer>
 
     </footer>
-    
 </body>
+
 </html>
