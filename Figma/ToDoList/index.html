@@ -32,21 +32,21 @@
                 <p>+ Add new task</p>
             </div>
 
+            <h3>Incomplete</h3>
             <div class="incompleteTasks">
-                <h3>Incomplete</h3>
                 <div class="task">
                     <input type="checkbox" class="chekbox">
                     <div class="textspans">
                         <span class="title">Submit my resume</span>
-                        <span class="time">⏰ Today, 17.00</span>
+                        <span class="time">⏰ <span class="dueDateSpan">Today</span>, <span class="dueTimeSpan">17.00</span></span>
                     </div>
                 </div>
             </div>
 
+            <h3>Completed Tasks</h3>
             <div class="completedTask">
-                <h3>Completed Tasks</h3>
                 <div class="checkedTask">
-                    <input type="checkbox" checked><span id="chekcedtitle">Sample</span>
+                    <input type="checkedBoxes" checked><span id="chekcedtitle">Sample</span>
                 </div>
 
 
@@ -71,11 +71,11 @@
                 </div>
                 <div class="popupitem">
                     <p><img src="utilities/dudateicon.png" alt="duedate"> Due Date</p>
-                    <input type="text" name="duedate" id="duedate">
+                    <input type="datetime-local" name="duedate" id="duedate">
                 </div>
                 <div class="buttons">
                     <button id="save">Save</button>
-                    <button id="cance">Cancel</button>
+                    <button id="cancel">Cancel</button>
                 </div>
 
             </div>

@@ -5,8 +5,8 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    width: 1280px;
+    height: 720px;
     position: relative;
 
 }
@@ -17,7 +17,7 @@ main {
 }
 .popup{
     width: 55%;      
-    height: 70%;
+    height: auto;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -25,7 +25,7 @@ main {
     z-index: 1;
     padding: 30px;
     background-color: white;
-    /* display: none; */
+    display: none;
 
 
 
@@ -50,24 +50,36 @@ main {
     height: 40px;
     font-size: large;
     padding-left: 10px;
-    /* border: none; */
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
 }
 .buttons{
     margin-top: 20px;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
 
 .buttons button{
     padding: 10px 150px; 
-    margin-top: 5px;   
-
+    width: 60%;
+    margin-top: 10px;
+    border-radius:40px ; 
+    border: none;  
+    font-size: large;
+    cursor: pointer;
 
 }
 
+#save{
+    background-color: black;
+    color: white;
+}
 
 
 
@@ -117,8 +129,8 @@ main {
 
 
 .leftside {
-    width: 16%;
-    height: 100vh;
+    width: 20%;
+    height: 100%;
     float: left;
     position: relative;
 
@@ -130,6 +142,7 @@ main {
     height: 50px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     background-color: black;
     color: white;
     margin-top: 10px;
@@ -158,7 +171,7 @@ main {
     width: auto;
     height: 100vh;
     position: absolute;
-    left: 25%;
+    left: 30%;
     padding: 25px;
 
 }
@@ -186,12 +199,27 @@ main {
 .task{
     margin: 10px 0px;
 }
+.time{
+    color: #B9B9BE;
+}
 .addnewtask{
     margin-bottom: 10px;
     cursor: pointer;
 }
 .checkedTask{
     margin: 5px 0px;
+}
+.completedTask{
+    padding: 20px;
+} 
+.completedTask input{
+    transform: scale(1.5);
+    margin-right: 20px;
+}
+.completedTask span{
+    font-size: large;
+    color: rgb(173, 156, 156);
+   
 }
 .marginLeft{
     margin-left: 40px;
