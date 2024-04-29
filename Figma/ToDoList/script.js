@@ -19,7 +19,24 @@ newTaskEle.addEventListener('click', () => {
 window.onload = () => {
     incompleteTasksDiv.innerHTML = localStorage.getItem('incompleteTasks');
     completedTasks.innerHTML = localStorage.getItem('completedTask')
-    
+
+    incompleteCheckboxes = incompleteTasksDiv.querySelectorAll('.task');
+    incompleteCheckboxes.forEach(element => {
+        let currCheckbox = element.querySelector(".chekbox")
+        currCheckbox.addEventListener('change',()=>{
+            if(currCheckbox.checked){
+                let summary = element.querySelector('.title').innerHTML;
+                let currentSummary = summary;
+                let checkedTask = document.createElement('div');
+                checkedTask.classList.add('checkedTask');
+                checkedTask.innerHTML = `<input type="checkbox" checked ><span class="chekcedtitle">${currentSummary}</span>`;
+                completedTasks.appendChild(checkedTask);
+
+                element.remove();
+                updateLocalStorage(); 
+            }
+        })
+    })
 }
 
 saveButton.addEventListener('click', () => {
