@@ -19,7 +19,7 @@ newTaskEle.addEventListener('click', () => {
 
 window.onload = () => {
     incompleteTasksDiv.innerHTML = localStorage.getItem('incompleteTasks');
-    completedTasks.innerHTML = localStorage.getItem('completedTask')
+    completedTasks.innerHTML = localStorage.getItem('completedTask');
 
     incompleteCheckboxes = incompleteTasksDiv.querySelectorAll('.task');
     incompleteCheckboxes.forEach(element => {
@@ -35,10 +35,39 @@ window.onload = () => {
 
                 element.remove();
                 updateLocalStorage();
+
             }
         })
     })
+
+    handleReminder();    
 }
+
+//Handling reminder;
+function handleReminder(){
+    let allTaskForReminder = document.querySelectorAll(".task");
+    let currenDate = new Date();
+    
+    allTaskForReminder.forEach(ele => {
+            let taskTime = ele.querySelector('.dueTimeSpan');
+            let taskDate = ele.querySelector('.dueDateSpan');
+            let taskDateTime = new Date(`${currenDate.getFullYear()}-${taskDate.innerText}T${taskTime.innerText}`);
+            
+            if(currenDate >= taskDateTime )
+            {
+                let remindedTask = document.querySelector('.remindedTask');
+                remindedTask.querySelector('.summary').innerText = ele.querySelector('.title').innerText;
+                remindedTask.querySelector('.description').innerText = ele.querySelector('.description').innerText;
+                reminderDiv.style.display = 'block';
+                
+                
+            }
+
+    });
+    
+    
+}
+
 
 saveButton.addEventListener('click', () => {
     let summary = newTaskSummary.value;
@@ -55,7 +84,7 @@ saveButton.addEventListener('click', () => {
     <span class="title">${summary}</span>
     <span class="time">⏰ <span class="dueDateSpan">${date}</span>,
      <span class="dueTimeSpan">${time}</span> 
-     </span> </div><span class = "description" style = "display:none"`;
+     </span> </div><span class = "description" style = "display:none">${description}</span>`;
 
     popupDiv.style.display = 'none';
     incompleteTasksDiv.appendChild(newTask);
@@ -73,6 +102,8 @@ saveButton.addEventListener('click', () => {
             updateLocalStorage();
 
         }
+        handleReminder();    
+
     })
 
 
@@ -119,33 +150,16 @@ function updateLocalStorage() {
 
 
 
-//Handling reminder;
-let allTaskForReminder = document.querySelectorAll(".task");
-let currenDate = new Date();
-let date = `${currenDate.getMonth() + 1}-${currenDate.getDate()}`;
-let time = `${currenDate.getHours}:${currenDate.getMinutes()}`;
-let seconds = currenDate.getSeconds();
-console.log(currenDate);
-allTaskForReminder.forEach(ele => {
-    let taskTime = ele.querySelector('.dueTimeSpan');
-    let taskDate = ele.querySelector('.dueDateSpan');
 
-    if (date === taskDate && (time === taskTime || time > taskTime)) {
-        reminderDiv.querySelector('.summary').innerHTML = ele.querySelector('.title').innerHTML;
-        reminderDiv.querySelector('.description').innerHTML = ele.querySelector('.description');
-        
-        reminderDiv.style.display = 'block';
-    }
-    
 
-});
 
 taskSkipButton.addEventListener('click', () => {
     reminderDiv.style.display = 'none';
 });
-reminderDiv.addEventListener('click', () => {
+taskRemindMeButton.addEventListener('click', () => {
     reminderDiv.style.display = 'none';
+
     setTimeout(() => {
-        reminderDiv.style.display = 'block'
+        reminderDiv.style.display = 'block';
     }, 4000);
 })
