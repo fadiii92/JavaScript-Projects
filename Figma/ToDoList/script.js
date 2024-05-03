@@ -15,7 +15,16 @@ reminderDiv.style.display = 'none';
 
 newTaskEle.addEventListener('click', () => {
     popupDiv.style.display = 'block';
-})
+    document.querySelector('main').classList.add('blur');
+});
+
+cancelButton.addEventListener('click', () => {
+    newTaskSummary.value = '';
+    newTaskDescription.value = '';
+    newTaskDueDate.value = '';
+    popupDiv.style.display = 'none';
+    document.querySelector('main').classList.remove('blur');
+});
 
 window.onload = () => {
     incompleteTasksDiv.innerHTML = localStorage.getItem('incompleteTasks');
@@ -116,18 +125,6 @@ saveButton.addEventListener('click', () => {
     updateLocalStorage();
 
 })
-
-
-
-cancelButton.addEventListener('click', () => {
-    newTaskSummary.value = '';
-    newTaskDescription.value = '';
-    newTaskDueDate.value = '';
-    popupDiv.style.display = 'none';
-})
-
-
-
 
 
 function verify() {

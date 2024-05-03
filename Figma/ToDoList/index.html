@@ -12,6 +12,28 @@
     <header>
 
     </header>
+    <div class="popup">
+        <h2>New Task</h2>
+        <div class="discriptionMenu">
+            <div class="popupitem">
+                <p><img src="utilities/summaryicon.png" alt="summary"> Summary</p>
+                <input type="text" name="summary" id="summary">
+            </div>
+            <div class="popupitem">
+                <p><img src="utilities/descriptionicon.png" alt="description"> Description</p>
+                <input type="text" name="description" id="description">
+            </div>
+            <div class="popupitem">
+                <p><img src="utilities/dudateicon.png" alt="duedate"> Due Date</p>
+                <input type="datetime-local" name="duedate" id="duedate">
+            </div>
+            <div class="buttons">
+                <button id="save">Save</button>
+                <button id="cancel">Cancel</button>
+            </div>
+
+        </div>
+    </div>
     <main>
         <div class="reminder">
            <div class="remindedTask">
@@ -64,28 +86,7 @@
         </div>
 
 
-        <div class="popup">
-            <h2>New Task</h2>
-            <div class="discriptionMenu">
-                <div class="popupitem">
-                    <p><img src="utilities/summaryicon.png" alt="summary"> Summary</p>
-                    <input type="text" name="summary" id="summary">
-                </div>
-                <div class="popupitem">
-                    <p><img src="utilities/descriptionicon.png" alt="description"> Description</p>
-                    <input type="text" name="description" id="description">
-                </div>
-                <div class="popupitem">
-                    <p><img src="utilities/dudateicon.png" alt="duedate"> Due Date</p>
-                    <input type="datetime-local" name="duedate" id="duedate">
-                </div>
-                <div class="buttons">
-                    <button id="save">Save</button>
-                    <button id="cancel">Cancel</button>
-                </div>
-
-            </div>
-        </div>
+       
         <script src="script.js"></script>
     </main>
 
