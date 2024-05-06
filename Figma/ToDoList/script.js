@@ -96,6 +96,7 @@ saveButton.addEventListener('click', () => {
      </span> </div><span class = "description" style = "display:none">${description}</span>`;
 
     popupDiv.style.display = 'none';
+    document.querySelector('main').classList.remove('blur');
     incompleteTasksDiv.appendChild(newTask);
 
     let currentCheckbox = newTask.querySelector('.chekbox');
@@ -111,6 +112,7 @@ saveButton.addEventListener('click', () => {
             updateLocalStorage();
 
         }
+
         handleReminder();    
 
     })
